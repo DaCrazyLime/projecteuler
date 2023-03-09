@@ -1,0 +1,13 @@
+n = int(input("Number: "))
+
+def prime_factors(n):
+    i = 2                           # first prime number is 2
+    while i * i <= n:
+        if n % i:                   # if n divide i gets a non-zero
+            i = i + 1
+        else:
+            n = n // i              # n divides by i until cannot divide anymore
+    return n
+
+largest_factor = prime_factors(n)
+print(largest_factor)
