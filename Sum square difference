@@ -1,0 +1,21 @@
+n = 101 #100 natural numbers
+n1 = 0 #for sum of square
+n2 = 0 #for square of sum
+listn1 = []
+listn2 = []
+
+for n1 in range(n):
+    listn1.append(n1**2)
+for n2 in range(n):
+    listn2.append(n2)
+
+
+
+totaln1 = sum(listn1)
+totaln2 = sum(listn2)
+
+print(totaln1)
+print(totaln2**2)
+print(totaln2**2 - totaln1)
+
+# Ans: 25164150
