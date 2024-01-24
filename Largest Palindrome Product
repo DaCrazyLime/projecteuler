@@ -1,0 +1,28 @@
+# Find the largest palindrome made from the product of two -digit numbers.
+
+
+n1 = 100 #1st 3 digit number
+n2 = 100 #2nd 3 digit number
+product = 0 #product of the 2 numbers
+plist = [] #list of digits in product
+plistpal = [] #list of digits in product's palindrome
+lpal = 0 #largest palindrome
+
+while n1 >= 100 and n1 < 1000: #while n1 is still 3 digit number
+  product = n1 * n2 #find product of 2 numbers
+  product = str(product)
+  for i in range(0,len(product),1): #get normal sequence
+    plist.append(product[i])
+  for i in range(len(product)-1,-1,-1): #get palindrome sequence
+    plistpal.append(product[i])
+  product = int(product)
+  if plistpal == plist and lpal < product: #to check if palindrome and if current palindrome is largest 
+    lpal = product
+  plist = [] 
+  plistpal = []
+  n2 += 1
+  if n2 >= 1000: #while n2 is still 3 digit number
+    n2 = 100
+    n1 += 1
+ 
+print(lpal)
